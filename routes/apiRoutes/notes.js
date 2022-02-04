@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const notes = require('../../db/db.json');
-const {createNewNote, filterByQuery, findByID} = require('../../lib/notes')
-const { v4: uuidv4} = require('uuid')
+const {createNewNote, findByID} = require('../../lib/notes')
+const { v4: uuidv4} = require('uuid');
 
 router.get('/notes', (req, res) => {
     let results = notes;    
@@ -23,10 +23,8 @@ router.post('/notes', (req,res) => {
     }
 })
 
-router.delete('/notes/id', (req, res) => {
-    if(req){
-        res.json('connection established')
-    }
+router.delete('/notes/:id', (req, res) => {
+    res.send(`Got a DELETE request for note:${id}`)
 })
 
 module.exports = router;
