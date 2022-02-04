@@ -23,4 +23,10 @@ router.post('/notes', (req,res) => {
     }
 })
 
+router.delete('/notes/id', (req, res) => {
+    if(req){
+        res.json('connection established')
+    }
+})
+
 module.exports = router;
