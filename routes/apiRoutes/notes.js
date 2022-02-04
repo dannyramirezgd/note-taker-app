@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const notes = require('../../db/db');
+const notes = require('../../db/db.json');
 const createNewNote = require('../../lib/notes')
+const { v4: uuidv4} = require('uuid')
 
-router.get('/db', (req, res) => {
+router.get('/notes', (req, res) => {
     let results = notes;    
     if (req) {
         res.json(results)
@@ -11,8 +12,8 @@ router.get('/db', (req, res) => {
     }
 })
 
-router.post('/db', (req,res) => {
-    req.body.id = notes.length.toString();
+router.post('/notes', (req,res) => {
+    req.body.id = uuidv4();
 
     if(!req.body) {
         res.sendStatus(400).send('The note is not properly formatted.');
