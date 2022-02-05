@@ -29,11 +29,6 @@ npm i uuid
 ## Usage
 Need to be familiar with express, node, uuid, and routing
 
-## Tests
-If you are looking to test the program please enter this into command: 
-```
-
-```
 ## Website
 https://glacial-headland-63928.herokuapp.com/
 
